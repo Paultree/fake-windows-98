@@ -1,0 +1,23 @@
+* {
+    border: 1px solid red;
+}
+
+body {
+    margin: 0;
+}
+
+.taskbar {
+    display: flex;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+
+
+    &__icons {
+
+        &--right {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
