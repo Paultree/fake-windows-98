@@ -23,7 +23,7 @@ Checklist:
 
 23/11/2022
 Implemented:
-- Basic taskbar with buttons as placeholders for icons.
+- Basic taskbar with buttons as placeholders for icons. Rendered via JS.
 - Added a clock.
 - Added a start button. 
 
