@@ -3,7 +3,7 @@ function renderView() {
 
 }
 
-const taskbarIconArr = ['ie', 'notepad', 'spider', 'cards'];
+const taskbarIconArr = ['ie', 'calculator', 'spider', 'cards'];
 
 const taskbarIconArrTwo = ['speaker', 'msn'];
 
@@ -16,7 +16,7 @@ function renderTaskBar() {
     container.classList.add('taskbar');
     button.classList.add('taskbar__start')
     document.body.appendChild(container);
-    button.innerHTML = 'Start';
+    button.innerHTML = '<img src="icons/windows.png">Start';
     container.appendChild(button); 
 
     renderIcons('left', taskbarIconArr);
@@ -29,10 +29,10 @@ function renderIcons(position, arr) {
     const container = document.createElement("div");
     //create left icons on for container being appended onto taskbar next to start button//
     for (let i = 0; i < arr.length; i++) {
-        const button = document.createElement("button");
-        button.classList.add(`${arr[i]}`);
-        button.innerHTML = `${arr[i]}`;
-      container.appendChild(button);
+        const icon = document.createElement("span");
+        icon.classList.add(`${arr[i]}`);
+        icon.innerHTML = `<img src="icons/${arr[i]}.png"/>`;
+      container.appendChild(icon);
     }
 
     //append container onto taskbar//
@@ -77,7 +77,9 @@ function currentTime() {
   }, 1000);
 }
 
-const desktopIconArr = ['bin', 'calculator', 'computer', 'folder']
+const desktopIconArr = ['bin', 'notepad', 'computer', 'folder'];
+
+const desktopIconNames = ['Recycling Bin', 'Notepad', 'My Computer', 'Images'];
 
 function renderDesktop() {
 const desktop = document.createElement('main');
@@ -85,12 +87,21 @@ const desktop = document.createElement('main');
   document.body.appendChild(desktop);
 
   for (let i = 0; i < desktopIconArr.length; i++) {
-    const icon = document.createElement("div");
+    const icon = document.createElement("span");
     icon.classList.add(`desktop__icon`);
     icon.classList.add(`desktop__icon--${desktopIconArr[i]}`);
+    icon.innerHTML = `<img src="icons/${desktopIconArr[i]}.png"><p>${desktopIconNames[i]}</p>`
     desktop.appendChild(icon);
+
+    icon.addEventListener("click", (e) => {
+      e.currentTarget.classList.toggle('highlighted');
+    });
   }
 }
 
+
 renderDesktop();
 renderTaskBar();
+
+
+

@@ -10,8 +10,8 @@ Checklist:
     -   The current time is displayed somewhere -[ x ]
 
 - HTML/CSS - [ ]
-    -   Wallpaper scales to fit the viewport - [ ]
-    -   Minimum 3 icons on desktop - [ ]
+    -   Wallpaper scales to fit the viewport - [ x ]
+    -   Minimum 3 icons on desktop - [ x ]
     -   The menu is positioned in the appropriate place - [ x ]
     -   Apps look consistent - [ ]
     -   Menu contains a flex with content inside it - [ ]
@@ -47,3 +47,23 @@ To-do:
 25/11/2022
 Implemented:
 - Desktop view - [ x ]
+- Icons rendered on taskbar - [ x ]
+- Complete layout of desktop - [ x ]
+- Icons on desktop can be highlighted upon click - [ x ]
+    - Behaves similar to windows - [ x ] (may have to skip)
+
+To-do:
+- Create a start menu - []
+- Put an empty folder in start menu -[]
+- create a functional notepad - []
+- create a functional calculator - []
+- Create a modal box for the following:
+    - Internet explorer - []
+    - MSN - []
+    - My computer - []
+    - My images - []
+    - Recycling Bin - []
+
+Notes:
+- Having a lot of issue with the icons highlighted. Current logic is to check which classes have the highlighted styling and then remove it. after that it will add the highlighted class to the target icon. Double clicking will cause a modal box to open.
+
