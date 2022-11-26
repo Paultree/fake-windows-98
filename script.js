@@ -1,8 +1,3 @@
-//renders the entire view
-function renderView() {
-
-}
-
 const taskbarIconArr = ['ie', 'calculator', 'spider', 'cards'];
 
 const taskbarIconArrTwo = ['speaker', 'msn'];
@@ -51,6 +46,8 @@ function renderIcons(position, arr) {
 
 }
 
+let span = document.createElement("span"); //scope this globally so that time doesn't duplicate.
+
 //creates a clock
 function currentTime() {
     let date = new Date();
@@ -71,7 +68,9 @@ function currentTime() {
 
   let time = `${hh} : ${mm} ${session}`
   const rightSide = document.querySelector('.taskbar__span--right');
-  rightSide.innerText = time;
+  rightSide.appendChild(span);
+  span.innerText = time;
+  span.classList.add('time')
   let t = setTimeout(function () {
     currentTime();
   }, 1000);
@@ -81,7 +80,7 @@ const desktopIconArr = ['bin', 'notepad', 'computer', 'folder'];
 
 const desktopIconNames = ['Recycling Bin', 'Notepad', 'My Computer', 'Images'];
 
-let arr = [];
+let arrHighlighted = [];
 
 function renderDesktop() {
 const desktop = document.createElement('main');
@@ -97,25 +96,29 @@ const desktop = document.createElement('main');
 
     
     //only allows one icon to be highlighted at a time//
-    window.onload = () => {}
+    
     icon.addEventListener("click", (e) => {
-      arr.forEach((folder) => {
-        
-        let removeIcon = document.querySelector(`.${folder}`);
-        removeIcon.classList.remove('highlighted');
-      });
-      
+
       let selectedFolder = e.currentTarget.classList[1];
       let hIcon = document.querySelector(`.${e.currentTarget.classList[1]}`);
       
-      if (!arr.includes(selectedFolder)) {
-        arr = [];
-        arr.push(selectedFolder);
+      if (!arrHighlighted.includes(selectedFolder)) {
+        arrHighlighted.forEach((folder) => {
+          let removeIcon = document.querySelector(`.${folder}`);
+          removeIcon.classList.remove("highlighted");
+        });
+
+        arrHighlighted = [];
+        arrHighlighted.push(selectedFolder);
         hIcon.classList.add('highlighted');
         
       }
       
     });
+
+    icon.addEventListener('dblclick', () => {
+      console.log('deez')
+    })
   }
 }
 
@@ -123,6 +126,13 @@ const desktop = document.createElement('main');
 renderDesktop();
 renderTaskBar();
 
+let windowsBox = document.getElementById('windowsBox');
 
+const closeButton = document.getElementById('closeButton');
 
+const minimizeButton = document.getElementById('minimizeButton');
 
+closeButton.addEventListener('click', () => {
+  console.log(windowsBox);
+  windowsBox.style.display = "none";
+})

@@ -19,15 +19,15 @@ Checklist:
 
 - JS - [ ]
     -   Put your js code into separate files - [ ]
-    -   Your icons and menu should add event listener for the click event, don't use the html onclick attribute - [ ]
-    -   Give your functions and variables good names - [ ]
-    -   Use the arrow syntax to declare functions - [ ]
+    -   Your icons and menu should add event listener for the click event, don't use the html onclick attribute - [ x ]
+    -   Give your functions and variables good names - [ x ]
+    -   Use the arrow syntax to declare functions - [ x ]
 
 - GITHUB - [ ]
     -   Create a repo on github with a README - [ x ]
     -   Clone Repo - [ X ]
     -   Create and checkout develop branch - [ x ]
-    -   Push all changes to your develop branch - [ ]
+    -   Push all changes to your develop branch - [ x ]
     -   When submitting create a pull request from develop  into main for review - [ ]
     -   Add coach as a reviewer - [ x ]
 
@@ -67,3 +67,7 @@ To-do:
 Notes:
 - Having a lot of issue with the icons highlighted. Current logic is to check which classes have the highlighted styling and then remove it. after that it will add the highlighted class to the target icon. Double clicking will cause a modal box to open.
 
+26/11/2022
+- Border around the time.
+- Icons are now selectable one at a time.
+- Created a template modal box.
