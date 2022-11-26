@@ -81,6 +81,8 @@ const desktopIconArr = ['bin', 'notepad', 'computer', 'folder'];
 
 const desktopIconNames = ['Recycling Bin', 'Notepad', 'My Computer', 'Images'];
 
+let arr = [];
+
 function renderDesktop() {
 const desktop = document.createElement('main');
   desktop.classList.add('desktop');
@@ -93,8 +95,26 @@ const desktop = document.createElement('main');
     icon.innerHTML = `<img src="icons/${desktopIconArr[i]}.png"><p>${desktopIconNames[i]}</p>`
     desktop.appendChild(icon);
 
+    
+    //only allows one icon to be highlighted at a time//
+    window.onload = () => {}
     icon.addEventListener("click", (e) => {
-      e.currentTarget.classList.toggle('highlighted');
+      arr.forEach((folder) => {
+        
+        let removeIcon = document.querySelector(`.${folder}`);
+        removeIcon.classList.remove('highlighted');
+      });
+      
+      let selectedFolder = e.currentTarget.classList[1];
+      let hIcon = document.querySelector(`.${e.currentTarget.classList[1]}`);
+      
+      if (!arr.includes(selectedFolder)) {
+        arr = [];
+        arr.push(selectedFolder);
+        hIcon.classList.add('highlighted');
+        
+      }
+      
     });
   }
 }
@@ -102,6 +122,7 @@ const desktop = document.createElement('main');
 
 renderDesktop();
 renderTaskBar();
+
 
 
 
