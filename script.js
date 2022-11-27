@@ -74,15 +74,35 @@ for (let app in applications ) {
 
   minimize.addEventListener('click', () => {
     box.style.display = 'none';
+    tab.classList.add("minimized");
   });
 
   close.addEventListener('click', ()=> {
     box.style.display = 'none';
     tab.style.display = 'none';
+    tab.classList.remove('minimized');
   })
 
   tab.addEventListener('click', ()=> {
-    box.style.display = 'block';
+    if (box.style.display == "none" && tab.classList.contains("minimized")) {
+      box.style.display = "block";
+      tab.classList.remove("minimized");
+    } else if (box.style.display == "none" && !tab.classList.contains("minimized")) {
+      box.style.display = "block";
+      tab.classList.add("minimized");
+    } else if (
+      box.style.display == "block" &&
+      !tab.classList.contains("minimized")
+    ) {
+      box.style.display = "none";
+      tab.classList.add("minimized");
+    } else if (
+      box.style.display == "block" &&
+      tab.classList.contains("minimized")
+    ) {
+      box.style.display = "none";
+      tab.classList.remove("minimized");
+    }
   })
 
   desktopIcon.addEventListener("dblclick", () => {
@@ -96,5 +116,12 @@ const startButton = document.querySelector('.taskbar__start');
 const startMenu = document.querySelector('.taskbar__startmenu');
 
 startButton.addEventListener('click', () => {
-  startMenu.classList.toggle('visible');
+  startMenu.classList.toggle('visible')
+})
+
+desktop.addEventListener('click', () => {
+  
+  if (startMenu.classList.contains('visible')) {
+    startMenu.classList.remove('visible')
+  }
 })

@@ -53,16 +53,10 @@ Implemented:
     - Behaves similar to windows - [ x ] (may have to skip)
 
 To-do:
-- Create a start menu - []
-- Put an empty folder in start menu -[]
-- create a functional notepad - []
+- Create a start menu - [ x ]
+- Put an empty folder in start menu -[ x ]
+- create a functional notepad - [ x ]
 - create a functional calculator - []
-- Create a modal box for the following:
-    - Internet explorer - []
-    - MSN - []
-    - My computer - []
-    - My images - []
-    - Recycling Bin - []
 
 Notes:
 - Having a lot of issue with the icons highlighted. Current logic is to check which classes have the highlighted styling and then remove it. after that it will add the highlighted class to the target icon. Double clicking will cause a modal box to open.
@@ -79,3 +73,8 @@ Notes:
 - Can open apps via double clicking on icon.
     - Only works for IE, calculator and notepad for functional purposes. in futre, all icons on desktop will have same functionality.
 - Start menu styled.
+
+To-do:
+- Functional calculator - []
+- Shutdown creates a black modal box -[]
+- Programs opens up a new modal box -[]

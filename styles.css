@@ -90,6 +90,7 @@ p {
   bottom: 300px;
   right: 300px;
   border: 2px solid #c0c0c0;
+  display: none;
 }
 .windows__header {
   background: linear-gradient(90deg, #000b7c, #377cc6);
@@ -140,6 +141,8 @@ p {
   align-self: center;
   width: 150px;
   height: 30px;
+  border: 2px solid white;
+  display: none;
 }
 
 #windowsIe {
@@ -232,6 +235,17 @@ iframe {
 
 .visible {
   display: block;
+}
+
+.minimized {
+  border-top: 2px solid #989898;
+  border-left: 2px solid #989898;
+  border-bottom: 2px solid #e7e7e7;
+  border-right: 2px solid #e7e7e7;
+}
+
+.visible-tab {
+  display: inline-block;
 }
 
 /*# sourceMappingURL=styles.css.map */
