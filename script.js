@@ -1,51 +1,3 @@
-const taskbarIconArr = ['ie', 'calculator', 'spider', 'cards'];
-
-const taskbarIconArrTwo = ['speaker', 'msn'];
-
-//renders the taskbar
-function renderTaskBar() {
-  //creates the actual taskbar
-    const container = document.createElement('div');
-    const button = document.createElement('button');
-    
-    container.classList.add('taskbar');
-    button.classList.add('taskbar__start')
-    document.body.appendChild(container);
-    button.innerHTML = '<img src="icons/windows.png">Start';
-    container.appendChild(button); 
-
-    renderIcons('left', taskbarIconArr);
-    renderIcons('right', taskbarIconArrTwo);
-    currentTime();
-}
-
-//renders icons on the taskbar
-function renderIcons(position, arr) {
-    const container = document.createElement("div");
-    //create left icons on for container being appended onto taskbar next to start button//
-    for (let i = 0; i < arr.length; i++) {
-        const icon = document.createElement("span");
-        icon.classList.add(`${arr[i]}`);
-        icon.innerHTML = `<img src="icons/${arr[i]}.png"/>`;
-      container.appendChild(icon);
-    }
-
-    //append container onto taskbar//
-    container.classList.add(`taskbar__icons`);
-    container.classList.add(`taskbar__icons--${position}`);
-    const taskbar = document.querySelector('.taskbar');
-    console.log(taskbar);
-    taskbar.appendChild(container);
-
-    //span element appended to bottom of taskbar icon containers//
-    const span = document.createElement('span');
-    span.classList.add(`taskbar__span`);
-    span.classList.add(`taskbar__span--${position}`);
-    container.appendChild(span);
-
-
-}
-
 let span = document.createElement("span"); //scope this globally so that time doesn't duplicate.
 
 //creates a clock
@@ -67,7 +19,7 @@ function currentTime() {
   mm = mm < 10 ? "0" + mm : mm;
 
   let time = `${hh} : ${mm} ${session}`
-  const rightSide = document.querySelector('.taskbar__span--right');
+  const rightSide = document.getElementById('time');
   rightSide.appendChild(span);
   span.innerText = time;
   span.classList.add('time')
@@ -76,65 +28,73 @@ function currentTime() {
   }, 1000);
 }
 
-const desktopIconArr = ['bin', 'notepad', 'computer', 'folder'];
+currentTime();
+
+const desktopIconArr = ['bin', 'notepad', 'computer', 'folder', 'calculator', 'ie'];
 
 const desktopIconNames = ['Recycling Bin', 'Notepad', 'My Computer', 'Images'];
 
 let arrHighlighted = [];
 
-function renderDesktop() {
-const desktop = document.createElement('main');
-  desktop.classList.add('desktop');
-  document.body.appendChild(desktop);
+desktopIconArr.forEach((type) => {
+  const desktopIcon = document.querySelector(`.desktop__icon--${type}`);
 
-  for (let i = 0; i < desktopIconArr.length; i++) {
-    const icon = document.createElement("span");
-    icon.classList.add(`desktop__icon`);
-    icon.classList.add(`desktop__icon--${desktopIconArr[i]}`);
-    icon.innerHTML = `<img src="icons/${desktopIconArr[i]}.png"><p>${desktopIconNames[i]}</p>`
-    desktop.appendChild(icon);
 
+  desktopIcon.addEventListener("click", (e) => {
     
-    //only allows one icon to be highlighted at a time//
-    
-    icon.addEventListener("click", (e) => {
-
-      let selectedFolder = e.currentTarget.classList[1];
-      let hIcon = document.querySelector(`.${e.currentTarget.classList[1]}`);
-      
-      if (!arrHighlighted.includes(selectedFolder)) {
-        arrHighlighted.forEach((folder) => {
-          let removeIcon = document.querySelector(`.${folder}`);
-          removeIcon.classList.remove("highlighted");
-        });
-
-        arrHighlighted = [];
-        arrHighlighted.push(selectedFolder);
-        hIcon.classList.add('highlighted');
-        
-      }
-      
-    });
-
-    icon.addEventListener('dblclick', () => {
-      console.log('deez')
-    })
-  }
-}
-
-
-renderDesktop();
-renderTaskBar();
-
-let windowsBox = document.getElementById('windowsBox');
-
-const closeButton = document.getElementById('closeButton');
-
-const minimizeButton = document.getElementById('minimizeButton');
-
-closeButton.addEventListener('click', () => {
-  console.log(windowsBox);
-  windowsBox.style.display = "none";
+    let selectedFolder = e.currentTarget.classList[1];
+    let hIcon = document.querySelector(`.${e.currentTarget.classList[1]}`)
+    if (!arrHighlighted.includes(selectedFolder)) {
+      arrHighlighted.forEach((folder) => {
+      let removeIcon = document.querySelector(`.${folder}`);
+      removeIcon.classList.remove("highlighted");
+        })
+    arrHighlighted = [];
+    arrHighlighted.push(selectedFolder);
+    hIcon.classList.add('highlighted');
+  };
 })
 
+})
 
+let applications = {
+  'ie': ['windowsIe', 'minIe', 'closeIe', 'tabIe', 'ie'],
+  'calculator': ['windowsCalculator', 'minCalculator', 'closeCalculator', 'tabCalculator', 'calculator'],
+  'notepad': ['windowsNotepad', 'minNotepad', 'closeNotepad', 'tabNotepad', 'notepad'],
+}
+
+for (let app in applications ) {
+  let box = document.getElementById(`${applications[app][0]}`);
+  let minimize = document.getElementById(`${applications[app][1]}`);
+  let close = document.getElementById(`${applications[app][2]}`);
+  let tab = document.getElementById(`${applications[app][3]}`);
+  let desktopIcon = document.querySelector(
+    `.desktop__icon--${applications[app][4]}`
+  );
+
+  minimize.addEventListener('click', () => {
+    box.style.display = 'none';
+  });
+
+  close.addEventListener('click', ()=> {
+    box.style.display = 'none';
+    tab.style.display = 'none';
+  })
+
+  tab.addEventListener('click', ()=> {
+    box.style.display = 'block';
+  })
+
+  desktopIcon.addEventListener("dblclick", () => {
+    box.style.display = "block";
+    tab.style.display = "block";
+  });
+}
+
+const startButton = document.querySelector('.taskbar__start');
+
+const startMenu = document.querySelector('.taskbar__startmenu');
+
+startButton.addEventListener('click', () => {
+  startMenu.classList.toggle('visible');
+})

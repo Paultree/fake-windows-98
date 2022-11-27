@@ -71,3 +71,11 @@ Notes:
 - Border around the time.
 - Icons are now selectable one at a time.
 - Created a template modal box.
+
+27/11/2022
+- functioning boxes that can minimize and close.
+- Notepad app can input text.
+- Used iframe to show google but due to limitations it refuses to connect.
+- Can open apps via double clicking on icon.
+    - Only works for IE, calculator and notepad for functional purposes. in futre, all icons on desktop will have same functionality.
+- Start menu styled.

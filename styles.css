@@ -33,6 +33,10 @@ body {
   margin-right: 20px;
   align-items: center;
 }
+.taskbar__icons--middle {
+  width: 80%;
+  margin-left: 50px;
+}
 .taskbar__icons--right {
   position: absolute;
   right: 10px;
@@ -134,6 +138,100 @@ p {
   margin-left: 0.3%;
   border-radius: 1%;
   align-self: center;
+  width: 150px;
+  height: 30px;
+}
+
+#windowsIe {
+  bottom: 150px;
+  right: 300px;
+}
+
+#windowsCalculator {
+  bottom: 100px;
+  right: 400px;
+}
+
+#windowsNotepad {
+  bottom: 300px;
+  right: 500px;
+}
+
+#notepadContent {
+  padding: 10px;
+}
+
+.text {
+  resize: none;
+  outline: none;
+  width: 95%;
+  padding: 10px;
+  border: none;
+  height: 95%;
+  font-size: 20px;
+}
+
+.desktop img {
+  min-width: 42px;
+}
+
+iframe {
+  width: 99%;
+  height: 99%;
+}
+
+.windows__options {
+  border-top: 2px solid white;
+}
+
+.address {
+  width: 95%;
+}
+
+.taskbar__startmenu {
+  bottom: 0rem;
+  position: absolute;
+  background: #c0c0c0;
+  left: 0;
+  width: 24rem;
+  min-height: 26.5rem;
+  border: 2px solid #979393;
+  display: none;
+}
+
+.menu-label {
+  color: white;
+  font-weight: 900;
+  position: absolute;
+  transform: rotateZ(-90deg);
+  width: 24rem;
+  font-size: 1.25rem;
+  background: #011590;
+  left: 0;
+  transform-origin: 0 0;
+  bottom: -0.5rem;
+  box-sizing: border-box;
+  padding: 0.125rem 0.75rem;
+  height: 3rem;
+  font-size: 3rem;
+}
+
+.menu-items {
+  list-style: none;
+  font-size: 2rem;
+  left: 0;
+}
+
+.menu-items li {
+  padding: 1rem;
+}
+
+.menu-items li:hover {
+  background: rgba(0, 10, 124, 0.431372549);
+}
+
+.visible {
+  display: block;
 }
 
 /*# sourceMappingURL=styles.css.map */
