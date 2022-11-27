@@ -19,6 +19,7 @@ body {
     padding-top: 0.3%;
     padding-bottom: 0.3%;
     background: #c0c0c0;
+    border-top: 2px solid #d7e4e4;
 
     &__start {
         font-size: 1.2rem;
@@ -33,17 +34,18 @@ body {
             display: flex;
             gap: 2.5%;
             margin-left: 0.5%;
+            margin-right: 20px;
             align-items: center;
     
         }
 
         &--right {
             position: absolute;
-            right: 0%;
+            right: 10px;
             display: flex;
             align-items: center;
             gap: 5%;
-            width: 7%;
+            width: 140px;
         }
     }
 }
@@ -139,4 +141,11 @@ p {
     align-items: center;
     cursor: pointer;
     justify-content: center;
+}
+
+.tab {
+    font-size: 1.2rem;
+        margin-left: 0.3%;
+        border-radius: 1%;
+        align-self: center;
 }

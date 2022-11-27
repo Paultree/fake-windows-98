@@ -136,3 +136,5 @@ closeButton.addEventListener('click', () => {
   console.log(windowsBox);
   windowsBox.style.display = "none";
 })
+
+
