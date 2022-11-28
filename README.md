@@ -56,7 +56,7 @@ To-do:
 - Create a start menu - [ x ]
 - Put an empty folder in start menu -[ x ]
 - create a functional notepad - [ x ]
-- create a functional calculator - []
+- create a functional calculator - [ x ]
 
 Notes:
 - Having a lot of issue with the icons highlighted. Current logic is to check which classes have the highlighted styling and then remove it. after that it will add the highlighted class to the target icon. Double clicking will cause a modal box to open.
@@ -75,6 +75,15 @@ Notes:
 - Start menu styled.
 
 To-do:
-- Functional calculator - []
-- Shutdown creates a black modal box -[]
-- Programs opens up a new modal box -[]
+- Functional calculator - [ x ]
+- Programs opens up a new modal box -[ x ]
+
+28/11/2022
+- Had to replace google iframe with an image as unable to unblock the iframe.
+- Unable to find a solution to unhighlight icons upon clicking desktop.
+- Basic functionality achieved.
+
+Future improvements:
+- Refactor code to make it look cleaner.
+- Refactor CSS to make it look cleaner.
+- Before starting a project, write out pseudo code or a plan on what to do. By extension, figure out at the beginning how to break down the task into smaller manageable bits.

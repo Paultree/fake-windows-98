@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
+    <script src="calculator.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -30,7 +31,7 @@
                 <div>Address</div>
                 <input type="text" class="address" value="https://www.google.com" />
             </div>
-        <div class="windows__content"> <iframe src="https://www.google.com" title="W3Schools Free Online Web Tutorials"></iframe></div>
+        <div class="windows__content"><img src="icons/google.png"></div>
     </div>
 
     <div class="windows" id="windowsCalculator">
@@ -42,14 +43,38 @@
             </div>          
         </div>
         <div class="windows__options">
-            <div>File</div>
             <div>Edit</div>
             <div>Views</div>
-            <div>Go</div>
-            <div>Favourites</div>
             <div>Help</div>    
         </div>
-        <div class="windows__content"></div>
+        <div class="windows__content" id="calculator__content">
+            <div class = 'calculator-frame'>
+    <div class = 'calculator-display'></div>
+    <div class = 'calculator-buttons'>
+        <div class = 'numbers' id = 'numbers'>
+            <button id = 'clear'>C</button>
+            <button id = 'zero'>0</button>
+            <button id = 'decimal'>.</button>
+            <button id = 'one'>1</button>
+            <button id = 'two'>2</button>
+            <button id = 'three'>3</button>
+            <button id = 'four'>4</button>
+            <button id = 'five'>5</button>
+            <button id = 'six'>6</button>
+            <button id = 'seven'>7</button>
+            <button id = 'eight'>8</button>
+            <button id = 'nine'>9</button>
+        </div>
+        <div class = 'operators' id = 'operators'>
+            <button id = 'plus'>+</button>
+            <button id = 'minus'>-</button>
+            <button id = 'multiply'>x</button>
+            <button id = 'divide'>/</button>
+            <button id = 'equal'>=</button>
+        </div>
+    </div>
+</div>
+        </div>
     </div>
 
     <div class="windows" id="windowsNotepad">
@@ -65,13 +90,11 @@
             <div>Edit</div>
             <div>Views</div>
             <div>Go</div>
-            <div>Favourites</div>
             <div>Help</div>    
         </div>
         <div class="windows__content" id="notepad"><textarea class="text"></textarea></div>
     </div>
 
-        
     <main class="desktop" id="desktop">
         <span class="desktop__icon desktop__icon--bin">
             <img src="icons/bin.png">
@@ -80,14 +103,6 @@
         <span class="desktop__icon desktop__icon--notepad">
             <img src="icons/notepad.png">
             <p>Notepad</p>
-        </span>
-        <span class="desktop__icon desktop__icon--computer">
-            <img src="icons/computer.png">
-            <p>My Computer</p>
-        </span>
-        <span class="desktop__icon desktop__icon--folder">
-            <img src="icons/folder.png">
-            <p>Images</p>
         </span>
         <span class="desktop__icon desktop__icon--calculator">
             <img src="icons/calculator.png">
@@ -103,13 +118,19 @@
     <div class="taskbar__startmenu">
                 <div class="menu-label">Windows <span>98</span></div>
                 <ul class="menu-items">
-                    <li>Programs</li>
+                    <li id="program">Programs ></li>
                     <li>Documents</li>
                     <li>Help</li>
                     <li>Log Off</li>
                     <li>Shutdown</li>
                 </ul>
             </div>
+    <div id="taskbarPrograms"> 
+        <ul class="menu-items">
+            <li>Images</li>
+            <li>My Computer</li>
+        </ul>
+    </div>
 
     <div class="taskbar">
         <button class="taskbar__start">

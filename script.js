@@ -30,7 +30,7 @@ function currentTime() {
 
 currentTime();
 
-const desktopIconArr = ['bin', 'notepad', 'computer', 'folder', 'calculator', 'ie'];
+const desktopIconArr = ['bin', 'notepad', 'calculator', 'ie'];
 
 const desktopIconNames = ['Recycling Bin', 'Notepad', 'My Computer', 'Images'];
 
@@ -107,7 +107,7 @@ for (let app in applications ) {
 
   desktopIcon.addEventListener("dblclick", () => {
     box.style.display = "block";
-    tab.style.display = "block";
+    tab.style.display = "inline";
   });
 }
 
@@ -124,4 +124,16 @@ desktop.addEventListener('click', () => {
   if (startMenu.classList.contains('visible')) {
     startMenu.classList.remove('visible')
   }
+})
+
+const program = document.getElementById('program');
+
+const programMenu = document.getElementById('taskbarPrograms');
+
+program.addEventListener('mouseover', () => {
+  programMenu.style.display = 'block';
+})
+
+program.addEventListener('mouseout', () => {
+  programMenu.style.display = 'none';
 })
