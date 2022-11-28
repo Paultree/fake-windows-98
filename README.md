@@ -1,12 +1,12 @@
 Checklist:
 - FEATURES:
-    -   You will be creating an SPA (Single Page Application)
-    -   Desktop has a wallpaper that fits the viewport -
+    -   You will be creating an SPA (Single Page Application) - [ x ]
+    -   Desktop has a wallpaper that fits the viewport -[ x ]
     -   There will be selectable icons - [ x ]
-    -   Selecting an icon will open an "app", creating a _modal_ to display some content
-    -   Able to close an app
-    -   There will be a selectable menu
-    -   Selecting the menu will display a list of text and icons
+    -   Selecting an icon will open an "app", creating a _modal_ to display some content - [ x ]
+    -   Able to close an app - [ x ]
+    -   There will be a selectable menu - [ x ]
+    -   Selecting the menu will display a list of text and icons - [ x ]
     -   The current time is displayed somewhere -[ x ]
 
 - HTML/CSS - [ ]
@@ -18,7 +18,7 @@ Checklist:
     -   Apps should be able to contain text, an image or a form - [ x ]
 
 - JS - [ ]
-    -   Put your js code into separate files - [ ]
+    -   Put your js code into separate files - [ x ]
     -   Your icons and menu should add event listener for the click event, don't use the html onclick attribute - [ x ]
     -   Give your functions and variables good names - [ x ]
     -   Use the arrow syntax to declare functions - [ x ]
@@ -28,7 +28,7 @@ Checklist:
     -   Clone Repo - [ X ]
     -   Create and checkout develop branch - [ x ]
     -   Push all changes to your develop branch - [ x ]
-    -   When submitting create a pull request from develop  into main for review - [ ]
+    -   When submitting create a pull request from develop  into main for review - [ x ]
     -   Add coach as a reviewer - [ x ]
 
 23/11/2022
