@@ -134,6 +134,8 @@ program.addEventListener('mouseover', () => {
   programMenu.style.display = 'block';
 })
 
-program.addEventListener('mouseout', () => {
-  programMenu.style.display = 'none';
-})
+
+
+programMenu.addEventListener("mouseout", () => {
+  programMenu.style.display = "none";
+});
