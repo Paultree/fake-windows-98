@@ -2,7 +2,7 @@ Checklist:
 - FEATURES:
     -   You will be creating an SPA (Single Page Application)
     -   Desktop has a wallpaper that fits the viewport -
-    -   There will be selectable icons
+    -   There will be selectable icons - [ x ]
     -   Selecting an icon will open an "app", creating a _modal_ to display some content
     -   Able to close an app
     -   There will be a selectable menu
@@ -13,9 +13,9 @@ Checklist:
     -   Wallpaper scales to fit the viewport - [ x ]
     -   Minimum 3 icons on desktop - [ x ]
     -   The menu is positioned in the appropriate place - [ x ]
-    -   Apps look consistent - [ ]
-    -   Menu contains a flex with content inside it - [ ]
-    -   Apps should be able to contain text, an image or a form - [ ]
+    -   Apps look consistent - [ x ]
+    -   Menu contains a flex with content inside it - [ x ]
+    -   Apps should be able to contain text, an image or a form - [ x ]
 
 - JS - [ ]
     -   Put your js code into separate files - [ ]

@@ -30,9 +30,8 @@ function currentTime() {
 
 currentTime();
 
-const desktopIconArr = ['bin', 'notepad', 'calculator', 'ie'];
+const desktopIconArr = ['notepad', 'calculator', 'ie'];
 
-const desktopIconNames = ['Recycling Bin', 'Notepad', 'My Computer', 'Images'];
 
 let arrHighlighted = [];
 
