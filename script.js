@@ -62,6 +62,8 @@ let applications = {
   'notepad': ['windowsNotepad', 'minNotepad', 'closeNotepad', 'tabNotepad', 'notepad'],
 }
 
+let arrFront = [];
+
 for (let app in applications ) {
   let box = document.getElementById(`${applications[app][0]}`);
   let minimize = document.getElementById(`${applications[app][1]}`);
@@ -70,6 +72,18 @@ for (let app in applications ) {
   let desktopIcon = document.querySelector(
     `.desktop__icon--${applications[app][4]}`
   );
+    
+    box.addEventListener('dblclick', (e) => {
+      if (!arrFront.includes(e.currentTarget.id)) {
+      arrFront.forEach(box => {
+        console.log
+        document.getElementById(box).classList.remove('front');
+      })
+      }
+      arrFront = [];
+      arrFront.push(e.currentTarget.id);
+      document.getElementById(e.currentTarget.id).classList.add('front');
+    })
 
   minimize.addEventListener('click', () => {
     box.style.display = 'none';

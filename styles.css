@@ -158,7 +158,7 @@ p {
 
 #windowsCalculator {
   bottom: 100px;
-  right: 400px;
+  right: 200px;
   width: 485px;
 }
 
@@ -279,7 +279,7 @@ iframe {
 }
 
 .calculator-frame button {
-  font-size: 60px;
+  font-size: 3rem;
   min-width: 70px;
   min-height: 7px;
   margin: 5px;
@@ -309,6 +309,10 @@ iframe {
 
 #equal {
   min-width: 157px;
+}
+
+.front {
+  z-index: 9999;
 }
 
 /*# sourceMappingURL=styles.css.map */
