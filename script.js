@@ -1,48 +1,6 @@
-function renderView() {
+let span = document.createElement("span"); //scope this globally so that time doesn't duplicate.
 
-}
-
-const taskbarIconArr = ['ie', 'notepad', 'spider', 'cards'];
-
-const taskbarIconArrTwo = ['speaker', 'msn'];
-
-function renderTaskBar() {
-    const container = document.createElement('div');
-    const button = document.createElement('button');
-    container.classList.add('taskbar');
-    button.classList.add('taskbar__start')
-    document.body.appendChild(container);
-    button.innerHTML = 'Start';
-    container.appendChild(button); 
-    renderIcons('left', taskbarIconArr);
-    renderIcons('right', taskbarIconArrTwo);
-    currentTime();
-}
-
-function renderIcons(position, arr) {
-    const container = document.createElement("div");
-    //create left icons on for container being appended onto taskbar next to start button//
-    for (let i = 0; i < arr.length; i++) {
-        const button = document.createElement("button");
-        button.classList.add(`${arr[i]}`);
-        button.innerHTML = `${arr[i]}`;
-      container.appendChild(button);
-    }
-
-    //append container onto taskbar//
-    container.classList.add(`taskbar__icons--${position}`);
-    const taskbar = document.querySelector('.taskbar');
-    console.log(taskbar);
-    taskbar.appendChild(container);
-
-    //span element appended to bottom of taskbar icon containers//
-    const span = document.createElement('span');
-    span.classList.add(`taskbar__span--${position}`);
-    container.appendChild(span);
-
-
-}
-
+//creates a clock
 function currentTime() {
     let date = new Date();
   let hh = date.getHours();
@@ -61,11 +19,136 @@ function currentTime() {
   mm = mm < 10 ? "0" + mm : mm;
 
   let time = `${hh} : ${mm} ${session}`
-  const rightSide = document.querySelector('.taskbar__span--right');
-  rightSide.innerText = time;
+  const rightSide = document.getElementById('time');
+  rightSide.appendChild(span);
+  span.innerText = time;
+  span.classList.add('time')
   let t = setTimeout(function () {
     currentTime();
   }, 1000);
 }
 
-renderTaskBar();
+currentTime();
+
+const desktopIconArr = ['notepad', 'calculator', 'ie'];
+
+
+let arrHighlighted = [];
+
+desktopIconArr.forEach((type) => {
+  const desktopIcon = document.querySelector(`.desktop__icon--${type}`);
+
+
+  desktopIcon.addEventListener("click", (e) => {
+    
+    let selectedFolder = e.currentTarget.classList[1];
+    let hIcon = document.querySelector(`.${e.currentTarget.classList[1]}`)
+    if (!arrHighlighted.includes(selectedFolder)) {
+      arrHighlighted.forEach((folder) => {
+      let removeIcon = document.querySelector(`.${folder}`);
+      removeIcon.classList.remove("highlighted");
+        })
+    arrHighlighted = [];
+    arrHighlighted.push(selectedFolder);
+    hIcon.classList.add('highlighted');
+  };
+})
+
+})
+
+let applications = {
+  'ie': ['windowsIe', 'minIe', 'closeIe', 'tabIe', 'ie'],
+  'calculator': ['windowsCalculator', 'minCalculator', 'closeCalculator', 'tabCalculator', 'calculator'],
+  'notepad': ['windowsNotepad', 'minNotepad', 'closeNotepad', 'tabNotepad', 'notepad'],
+}
+
+let arrFront = [];
+
+for (let app in applications ) {
+  let box = document.getElementById(`${applications[app][0]}`);
+  let minimize = document.getElementById(`${applications[app][1]}`);
+  let close = document.getElementById(`${applications[app][2]}`);
+  let tab = document.getElementById(`${applications[app][3]}`);
+  let desktopIcon = document.querySelector(
+    `.desktop__icon--${applications[app][4]}`
+  );
+    
+    box.addEventListener('dblclick', (e) => {
+      if (!arrFront.includes(e.currentTarget.id)) {
+      arrFront.forEach(box => {
+        console.log
+        document.getElementById(box).classList.remove('front');
+      })
+      }
+      arrFront = [];
+      arrFront.push(e.currentTarget.id);
+      document.getElementById(e.currentTarget.id).classList.add('front');
+    })
+
+  minimize.addEventListener('click', () => {
+    box.style.display = 'none';
+    tab.classList.add("minimized");
+  });
+
+  close.addEventListener('click', ()=> {
+    box.style.display = 'none';
+    tab.style.display = 'none';
+    tab.classList.remove('minimized');
+  })
+
+  tab.addEventListener('click', ()=> {
+    if (box.style.display == "none" && tab.classList.contains("minimized")) {
+      box.style.display = "block";
+      tab.classList.remove("minimized");
+    } else if (box.style.display == "none" && !tab.classList.contains("minimized")) {
+      box.style.display = "block";
+      tab.classList.add("minimized");
+    } else if (
+      box.style.display == "block" &&
+      !tab.classList.contains("minimized")
+    ) {
+      box.style.display = "none";
+      tab.classList.add("minimized");
+    } else if (
+      box.style.display == "block" &&
+      tab.classList.contains("minimized")
+    ) {
+      box.style.display = "none";
+      tab.classList.remove("minimized");
+    }
+  })
+
+  desktopIcon.addEventListener("dblclick", () => {
+    box.style.display = "block";
+    tab.style.display = "inline";
+  });
+}
+
+const startButton = document.querySelector('.taskbar__start');
+
+const startMenu = document.querySelector('.taskbar__startmenu');
+
+startButton.addEventListener('click', () => {
+  startMenu.classList.toggle('visible')
+})
+
+desktop.addEventListener('click', () => {
+  
+  if (startMenu.classList.contains('visible')) {
+    startMenu.classList.remove('visible')
+  }
+})
+
+const program = document.getElementById('program');
+
+const programMenu = document.getElementById('taskbarPrograms');
+
+program.addEventListener('mouseover', () => {
+  programMenu.style.display = 'block';
+})
+
+
+
+programMenu.addEventListener("mouseout", () => {
+  programMenu.style.display = "none";
+});

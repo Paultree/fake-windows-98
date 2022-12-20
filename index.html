@@ -6,9 +6,148 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="script.js" defer></script>
+    <script src="calculator.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <div class="windows" id="windowsIe">
+        <div class="windows__header">
+            Internet Explorer
+            <div class="windows__header--buttons">
+                <span class="minimize-button" id="minIe">_</span>
+                <span class="close-button" id="closeIe">X</span>  
+            </div>          
+        </div>
+        <div class="windows__options">
+            <div>File</div>
+            <div>Edit</div>
+            <div>Views</div>
+            <div>Go</div>
+            <div>Favourites</div>
+            <div>Help</div>    
+        </div>
+        <div class="windows__options">
+                <div>Address</div>
+                <input type="text" class="address" value="https://www.google.com" />
+            </div>
+        <div class="windows__content"><img src="icons/google.png"></div>
+    </div>
+
+    <div class="windows" id="windowsCalculator">
+        <div class="windows__header">
+            Calculator
+            <div class="windows__header--buttons">
+                <span class="minimize-button" id="minCalculator">_</span>
+                <span class="close-button" id="closeCalculator">X</span>  
+            </div>          
+        </div>
+        <div class="windows__options">
+            <div>Edit</div>
+            <div>Views</div>
+            <div>Help</div>    
+        </div>
+        <div class="windows__content" id="calculator__content">
+            <div class = 'calculator-frame'>
+    <div class = 'calculator-display'></div>
+    <div class = 'calculator-buttons'>
+        <div class = 'numbers' id = 'numbers'>
+            <button id = 'clear'>C</button>
+            <button id = 'zero'>0</button>
+            <button id = 'decimal'>.</button>
+            <button id = 'one'>1</button>
+            <button id = 'two'>2</button>
+            <button id = 'three'>3</button>
+            <button id = 'four'>4</button>
+            <button id = 'five'>5</button>
+            <button id = 'six'>6</button>
+            <button id = 'seven'>7</button>
+            <button id = 'eight'>8</button>
+            <button id = 'nine'>9</button>
+        </div>
+        <div class = 'operators' id = 'operators'>
+            <button id = 'plus'>+</button>
+            <button id = 'minus'>-</button>
+            <button id = 'multiply'>x</button>
+            <button id = 'divide'>/</button>
+            <button id = 'equal'>=</button>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+
+    <div class="windows" id="windowsNotepad">
+        <div class="windows__header">
+            Notepad
+            <div class="windows__header--buttons">
+                <span class="minimize-button" id="minNotepad">_</span>
+                <span class="close-button" id="closeNotepad">X</span>  
+            </div>          
+        </div>
+        <div class="windows__options">
+            <div>File</div>
+            <div>Edit</div>
+            <div>Views</div>
+            <div>Go</div>
+            <div>Help</div>    
+        </div>
+        <div class="windows__content" id="notepad"><textarea class="text"></textarea></div>
+    </div>
+
+    <main class="desktop" id="desktop">
+        <span class="desktop__icon desktop__icon--notepad">
+            <img src="icons/notepad.png">
+            <p>Notepad</p>
+        </span>
+        <span class="desktop__icon desktop__icon--calculator">
+            <img src="icons/calculator.png">
+            <p>Calculator</p>
+        </span>
+        <span class="desktop__icon desktop__icon--ie">
+            <img src="icons/ie.png">
+            <p>Internet explorer</p>
+        </span>
+        
+    </main>
     
+    <div class="taskbar__startmenu">
+                <div class="menu-label">Windows <span>98</span></div>
+                <ul class="menu-items">
+                    <li id="program">Programs ></li>
+                    <li>Documents</li>
+                    <li>Help</li>
+                    <li>Log Off</li>
+                    <li>Shutdown</li>
+                </ul>
+            </div>
+    <div id="taskbarPrograms"> 
+        <ul class="menu-items" id="programList">
+            <li><img src="icons/folder.png">Images</li>
+            <li><img src="icons/computer.png"> My Computer</li>
+        </ul>
+    </div>
+
+    <div class="taskbar">
+        <button class="taskbar__start">
+            <img src="icons/windows.png">Start</button>
+            
+            <div class="taskbar__icons taskbar__icons--middle" id="tabs">
+                <button class="tab" id="tabIe">Internet Explorer</button>
+                <button class="tab" id="tabCalculator">Calculator</button>
+                <button class="tab" id="tabNotepad">Notepad</button>
+            </div>
+            <div class="taskbar__icons taskbar__icons--right">
+                <span class="speaker">
+                    <img src="icons/speaker.png">
+                </span>
+                <span class="msn">
+                    <img src="icons/msn.png">
+                </span>
+                <span class="taskbar__span taskbar__span--right" id="time">
+                    
+                </span>
+            </div>
+        </div>
 </body>
 </html>
